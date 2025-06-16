@@ -1,5 +1,5 @@
 # Proyecto de Primer Bimestre Metodos Numéricos Gr1CC
-## Integrantes
+## Integrantes Grupo 6
 - Celeste Gallardo
 - Daniel Menendez
 - Jesua Villacis
