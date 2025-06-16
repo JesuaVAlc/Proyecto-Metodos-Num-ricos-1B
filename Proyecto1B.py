@@ -141,14 +141,27 @@ def actualizar_grafico():
                 ax.plot(p1[0], p1[1], 'o', color=circulos[i].color, markersize=8, alpha=0.7)
                 ax.plot(p2[0], p2[1], 'o', color=circulos[j].color, markersize=8, alpha=0.7)
     
-    # Dibujar puntos de intersección y línea de Monge
-    for idx, p_inter in enumerate(puntos_intersect):
-        ax.plot(*p_inter, 'ro', markersize=10, markeredgecolor='black', label=f'Intersección {idx+1}')
-    
+   # Dibujar puntos de intersección y línea de Monge 
     if len(puntos_intersect) == 3:
+        colores = ['cyan', 'magenta', 'yellow']  
+        etiquetas = ['Punto x', 'Punto y', 'Punto z']
+        
+        for p_inter, color, etiqueta in zip(puntos_intersect, colores, etiquetas):
+            ax.plot(*p_inter, 'o', 
+                    color=color,              
+                    markersize=12,            
+                    markeredgecolor='black',  
+                    markerfacecolor=color,    
+                    label=etiqueta)           
+        
         x, y, z = puntos_intersect
-        ax.plot([x[0], y[0], z[0]], [x[1], y[1], z[1]], 'b-', alpha=0.5, linewidth=2, label='Línea de Monge')
-    
+        ax.plot([x[0], y[0], z[0]], [x[1], y[1], z[1]], 
+                '--',                         # Estilo de línea discontinuo
+                color='blue',               # Color morado
+                alpha=0.7,                    # Menos transparente
+                linewidth=2.5,                # Línea más gruesa
+                label='Línea de Monge')
+        
     ax.set_title("Tangentes Extendidas hasta Puntos de Intersección", fontsize=14)
     ax.legend(loc='upper right')
     plt.draw()
