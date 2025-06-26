@@ -2,7 +2,7 @@
 ## Integrantes Grupo 6
 - Celeste Gallardo
 - Daniel Menendez
-- Jesua Villacis
+- Jesua Villacís
 
 ##  Características Principales
 - **Interfaz interactiva**: Arrastra círculos con el mouse para ver cambios en tiempo real.
